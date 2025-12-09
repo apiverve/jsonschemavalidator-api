@@ -1,0 +1,101 @@
+openapi: 3.0.4
+info:
+  title: JSON Schema Validator
+  description: JSON Schema Validator is a comprehensive tool for validating JSON data against JSON Schema definitions. It provides detailed error reporting with field-level validation results.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/jsonschemavalidator:
+    post:
+      summary: Validate JSON
+      description: JSON Schema Validator is a comprehensive tool for validating JSON data against JSON Schema definitions. It provides detailed error reporting with field-level validation results.
+      operationId: jsonschemavalidator
+      parameters: []
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  valid: true
+                  errors: []
+                  error_count: 0
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                schema:
+                  type: object
+                  description: The JSON Schema to validate against
+                  example:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      age:
+                        type: integer
+                    required:
+                    - name
+                json:
+                  type: object
+                  description: The JSON data to validate
+                  example:
+                    name: John Doe
+                    age: 30
+              required:
+              - schema
+              - json
+              example:
+                schema:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    age:
+                      type: integer
+                  required:
+                  - name
+                json:
+                  name: John Doe
+                  age: 30
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
