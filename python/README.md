@@ -44,7 +44,10 @@ from apiverve_jsonschemavalidator.apiClient import JsonschemavalidatorAPIClient
 # Initialize the client with your APIVerve API key
 api = JsonschemavalidatorAPIClient("[YOUR_API_KEY]")
 
-query = { "schema": { "type": "object", "properties": { "name": { "type": "string" }, "age": { "type": "integer" } }, "required": [ "name" ] }, "json": { "name": "John Doe", "age": 30 } }
+query = {
+    "schema": {"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"}},"required":["name"]},
+    "json": {"name":"John Doe","age":30}
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "schema": { "type": "object", "properties": { "name": { "type": "string" }, "age": { "type": "integer" } }, "required": [ "name" ] }, "json": { "name": "John Doe", "age": 30 } }
+query = {
+    "schema": {"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"}},"required":["name"]},
+    "json": {"name":"John Doe","age":30}
+}
 ```
 
 ###### Simple Request
@@ -122,7 +128,10 @@ from apiverve_jsonschemavalidator.apiClient import JsonschemavalidatorAPIClient,
 
 api = JsonschemavalidatorAPIClient("[YOUR_API_KEY]")
 
-query = { "schema": { "type": "object", "properties": { "name": { "type": "string" }, "age": { "type": "integer" } }, "required": [ "name" ] }, "json": { "name": "John Doe", "age": 30 } }
+query = {
+    "schema": {"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"}},"required":["name"]},
+    "json": {"name":"John Doe","age":30}
+}
 
 try:
     result = api.execute(query)
@@ -143,7 +152,10 @@ from apiverve_jsonschemavalidator.apiClient import JsonschemavalidatorAPIClient,
 
 api = JsonschemavalidatorAPIClient("[YOUR_API_KEY]")
 
-query = { "schema": { "type": "object", "properties": { "name": { "type": "string" }, "age": { "type": "integer" } }, "required": [ "name" ] }, "json": { "name": "John Doe", "age": 30 } }
+query = {
+    "schema": {"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"}},"required":["name"]},
+    "json": {"name":"John Doe","age":30}
+}
 
 try:
     result = api.execute(query)
@@ -177,7 +189,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_jsonschemavalidator.apiClient import JsonschemavalidatorAPIClient, JsonschemavalidatorAPIClientError
 
-query = { "schema": { "type": "object", "properties": { "name": { "type": "string" }, "age": { "type": "integer" } }, "required": [ "name" ] }, "json": { "name": "John Doe", "age": 30 } }
+query = {
+    "schema": {"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"}},"required":["name"]},
+    "json": {"name":"John Doe","age":30}
+}
 
 # Using context manager ensures proper cleanup
 with JsonschemavalidatorAPIClient("[YOUR_API_KEY]") as api:
@@ -203,7 +218,10 @@ from apiverve_jsonschemavalidator.apiClient import JsonschemavalidatorAPIClient
 # Enable debug mode
 api = JsonschemavalidatorAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "schema": { "type": "object", "properties": { "name": { "type": "string" }, "age": { "type": "integer" } }, "required": [ "name" ] }, "json": { "name": "John Doe", "age": 30 } }
+query = {
+    "schema": {"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"}},"required":["name"]},
+    "json": {"name":"John Doe","age":30}
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -218,8 +236,12 @@ from apiverve_jsonschemavalidator.apiClient import JsonschemavalidatorAPIClient
 
 api = JsonschemavalidatorAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "schema": {"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer"}},"required":["name"]},
+    "json": {"name":"John Doe","age":30}
+}
+
 try:
-    query = { "schema": { "type": "object", "properties": { "name": { "type": "string" }, "age": { "type": "integer" } }, "required": [ "name" ] }, "json": { "name": "John Doe", "age": 30 } }
     result = api.execute(query)
     print(result)
 finally:
