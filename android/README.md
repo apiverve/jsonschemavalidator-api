@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:jsonschemavalidator-api:1.1.13'
+    implementation 'com.github.apiverve:jsonschemavalidator-api:1.1.14'
 }
 ```
 
@@ -47,8 +47,8 @@ JSONSchemaValidatorAPIClient client = new JSONSchemaValidatorAPIClient("YOUR_API
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("schema", "{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"}},\"required\":[\"name\"]}");
-    parameters.put("json", "{\"name\":\"John\",\"age\":30}");
+    parameters.put("schema", "[object Object]");
+    parameters.put("json", "[object Object]");
 
     // Execute the request
     APIResponse response = client.execute(parameters);
