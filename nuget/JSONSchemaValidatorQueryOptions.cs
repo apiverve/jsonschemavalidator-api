@@ -14,12 +14,12 @@ namespace APIVerve.API.JSONSchemaValidator
         /// The JSON Schema to validate against
         /// </summary>
         [JsonProperty("schema")]
-        public string Schema { get; set; }
+        public object Schema { get; set; }
 
         /// <summary>
         /// The JSON data to validate
         /// </summary>
         [JsonProperty("json")]
-        public string Json { get; set; }
+        public object Json { get; set; }
     }
 }
