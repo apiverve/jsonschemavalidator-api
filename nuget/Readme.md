@@ -1,13 +1,12 @@
-JSONSchemaValidator API
+JSON Schema Validator API
 ============
 
-JSON Schema Validator is a comprehensive tool for validating JSON data against JSON Schema definitions. It provides detailed error reporting with field-level validation results.
+JSON Schema Validator is a JSON validator API that tests any JSON object against a JSON Schema you provide, so you can check JSON against its schema before trusting it. It reports pass-fail status and total error count, while paid plans add specific error messages.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [JSONSchemaValidator API](https://apiverve.com/marketplace/jsonschemavalidator?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.JSONSchemaValidator.svg)](https://www.nuget.org/packages/APIVerve.API.JSONSchemaValidator)
+
+This is a .NET wrapper for the [JSON Schema Validator API](https://apiverve.com/marketplace/jsonschemavalidator?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -40,8 +39,8 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the jsonschemavalidator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+Before using the JSON Schema Validator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -61,25 +60,9 @@ class Program
         var apiClient = new JSONSchemaValidatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new JSONSchemaValidatorQueryOptions {
-    schema = {
-        type = "object",
-        properties = {
-            name = {
-                type = "string"
-            },
-            age = {
-                type = "integer"
-            }
-        },
-        required = [
-            "name"
-        ]
-    },
-    json = {
-        name = "John Doe",
-        age = 30
-    }
-};
+            Schema = Newtonsoft.Json.Linq.JToken.Parse(@"{""type"":""object"",""properties"":{""name"":{""type"":""string""},""age"":{""type"":""integer""}},""required"":[""name""]}"),
+            Json = Newtonsoft.Json.Linq.JToken.Parse(@"{""name"":""John Doe"",""age"":30}")
+        };
 
         // Make the API call
         try
@@ -109,13 +92,13 @@ class Program
 
 ## Usage
 
-The JSONSchemaValidator API documentation is found here: [https://docs.apiverve.com/ref/jsonschemavalidator](https://docs.apiverve.com/ref/jsonschemavalidator?utm_source=nuget&utm_medium=readme).
+The JSON Schema Validator API documentation is found here: [https://docs.apiverve.com/ref/jsonschemavalidator](https://docs.apiverve.com/ref/jsonschemavalidator?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-JSONSchemaValidator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+JSON Schema Validator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -142,25 +125,9 @@ public class Example
         var apiClient = new JSONSchemaValidatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new JSONSchemaValidatorQueryOptions {
-    schema = {
-        type = "object",
-        properties = {
-            name = {
-                type = "string"
-            },
-            age = {
-                type = "integer"
-            }
-        },
-        required = [
-            "name"
-        ]
-    },
-    json = {
-        name = "John Doe",
-        age = 30
-    }
-};
+            Schema = Newtonsoft.Json.Linq.JToken.Parse(@"{""type"":""object"",""properties"":{""name"":{""type"":""string""},""age"":{""type"":""integer""}},""required"":[""name""]}"),
+            Json = Newtonsoft.Json.Linq.JToken.Parse(@"{""name"":""John Doe"",""age"":30}")
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -191,25 +158,9 @@ public class Example
         var apiClient = new JSONSchemaValidatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new JSONSchemaValidatorQueryOptions {
-    schema = {
-        type = "object",
-        properties = {
-            name = {
-                type = "string"
-            },
-            age = {
-                type = "integer"
-            }
-        },
-        required = [
-            "name"
-        ]
-    },
-    json = {
-        name = "John Doe",
-        age = 30
-    }
-};
+            Schema = Newtonsoft.Json.Linq.JToken.Parse(@"{""type"":""object"",""properties"":{""name"":{""type"":""string""},""age"":{""type"":""integer""}},""required"":[""name""]}"),
+            Json = Newtonsoft.Json.Linq.JToken.Parse(@"{""name"":""John Doe"",""age"":30}")
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -245,25 +196,9 @@ public class Example
         var apiClient = new JSONSchemaValidatorAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new JSONSchemaValidatorQueryOptions {
-    schema = {
-        type = "object",
-        properties = {
-            name = {
-                type = "string"
-            },
-            age = {
-                type = "integer"
-            }
-        },
-        required = [
-            "name"
-        ]
-    },
-    json = {
-        name = "John Doe",
-        age = 30
-    }
-};
+            Schema = Newtonsoft.Json.Linq.JToken.Parse(@"{""type"":""object"",""properties"":{""name"":{""type"":""string""},""age"":{""type"":""integer""}},""required"":[""name""]}"),
+            Json = Newtonsoft.Json.Linq.JToken.Parse(@"{""name"":""John Doe"",""age"":30}")
+        };
 
         try
         {
@@ -318,25 +253,9 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new JSONSchemaValidatorQueryOptions {
-    schema = {
-        type = "object",
-        properties = {
-            name = {
-                type = "string"
-            },
-            age = {
-                type = "integer"
-            }
-        },
-        required = [
-            "name"
-        ]
-    },
-    json = {
-        name = "John Doe",
-        age = 30
-    }
-};
+            Schema = Newtonsoft.Json.Linq.JToken.Parse(@"{""type"":""object"",""properties"":{""name"":{""type"":""string""},""age"":{""type"":""integer""}},""required"":[""name""]}"),
+            Json = Newtonsoft.Json.Linq.JToken.Parse(@"{""name"":""John Doe"",""age"":30}")
+        };
 
         try
         {
@@ -376,24 +295,8 @@ apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
 var queryOptions = new JSONSchemaValidatorQueryOptions {
-    schema = {
-        type = "object",
-        properties = {
-            name = {
-                type = "string"
-            },
-            age = {
-                type = "integer"
-            }
-        },
-        required = [
-            "name"
-        ]
-    },
-    json = {
-        name = "John Doe",
-        age = 30
-    }
+    Schema = Newtonsoft.Json.Linq.JToken.Parse(@"{""type"":""object"",""properties"":{""name"":{""type"":""string""},""age"":{""type"":""integer""}},""required"":[""name""]}"),
+    Json = Newtonsoft.Json.Linq.JToken.Parse(@"{""name"":""John Doe"",""age"":30}")
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -419,24 +322,8 @@ apiClient.SetLogger(message =>
 });
 
 var queryOptions = new JSONSchemaValidatorQueryOptions {
-    schema = {
-        type = "object",
-        properties = {
-            name = {
-                type = "string"
-            },
-            age = {
-                type = "integer"
-            }
-        },
-        required = [
-            "name"
-        ]
-    },
-    json = {
-        name = "John Doe",
-        age = 30
-    }
+    Schema = Newtonsoft.Json.Linq.JToken.Parse(@"{""type"":""object"",""properties"":{""name"":{""type"":""string""},""age"":{""type"":""integer""}},""required"":[""name""]}"),
+    Json = Newtonsoft.Json.Linq.JToken.Parse(@"{""name"":""John Doe"",""age"":30}")
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -454,24 +341,8 @@ apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
 var queryOptions = new JSONSchemaValidatorQueryOptions {
-    schema = {
-        type = "object",
-        properties = {
-            name = {
-                type = "string"
-            },
-            age = {
-                type = "integer"
-            }
-        },
-        required = [
-            "name"
-        ]
-    },
-    json = {
-        name = "John Doe",
-        age = 30
-    }
+    Schema = Newtonsoft.Json.Linq.JToken.Parse(@"{""type"":""object"",""properties"":{""name"":{""type"":""string""},""age"":{""type"":""integer""}},""required"":[""name""]}"),
+    Json = Newtonsoft.Json.Linq.JToken.Parse(@"{""name"":""John Doe"",""age"":30}")
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -483,24 +354,8 @@ The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
 var queryOptions = new JSONSchemaValidatorQueryOptions {
-    schema = {
-        type = "object",
-        properties = {
-            name = {
-                type = "string"
-            },
-            age = {
-                type = "integer"
-            }
-        },
-        required = [
-            "name"
-        ]
-    },
-    json = {
-        name = "John Doe",
-        age = 30
-    }
+    Schema = Newtonsoft.Json.Linq.JToken.Parse(@"{""type"":""object"",""properties"":{""name"":{""type"":""string""},""age"":{""type"":""integer""}},""required"":[""name""]}"),
+    Json = Newtonsoft.Json.Linq.JToken.Parse(@"{""name"":""John Doe"",""age"":30}")
 };
 
 using (var apiClient = new JSONSchemaValidatorAPIClient("[YOUR_API_KEY]"))
@@ -531,7 +386,7 @@ using (var apiClient = new JSONSchemaValidatorAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -542,12 +397,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 

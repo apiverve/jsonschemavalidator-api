@@ -17,7 +17,7 @@ namespace APIVerve.API.JSONSchemaValidator
         public object Schema { get; set; }
 
         /// <summary>
-        /// The JSON data to validate
+        /// The JSON data to validate. An empty object is a valid document and is accepted.
         /// </summary>
         [JsonProperty("json")]
         public object Json { get; set; }
