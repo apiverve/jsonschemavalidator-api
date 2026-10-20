@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/jsonschemavalidator",
-  "version": "1.2.0",
-  "description": "JSON Schema Validator is a comprehensive tool for validating JSON data against JSON Schema definitions. It provides detailed error reporting with field-level validation results.",
+  "version": "1.2.2",
+  "description": "JSON Schema Validator is a JSON validator API that tests any JSON object against a JSON Schema you provide, so you can check JSON against its schema before trusting it. It reports pass-fail status and total error count, while paid plans add specific error messages.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "json schema", "json validator", "schema validation", "json validation", "validate json"
+    "json validator", "json schema", "json schema validator", "check json schema", "json validator api"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/jsonschemavalidator-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/jsonschemavalidator?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/jsonschemavalidator?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
