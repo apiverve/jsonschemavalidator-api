@@ -1,6 +1,6 @@
 # JSON Schema Validator API - PHP Package
 
-JSON Schema Validator is a comprehensive tool for validating JSON data against JSON Schema definitions. It provides detailed error reporting with field-level validation results.
+JSON Schema Validator is a JSON validator API that tests any JSON object against a JSON Schema you provide, so you can check JSON against its schema before trusting it. It reports pass-fail status and total error count, while paid plans add specific error messages.
 
 ## Installation
 
@@ -86,11 +86,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/jsonschemavalidator?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/jsonschemavalidator?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://apiverve.com/marketplace/jsonschemavalidator?utm_source=php&utm_medium=readme](https://apiverve.com/marketplace/jsonschemavalidator?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/jsonschemavalidator?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/jsonschemavalidator?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License
