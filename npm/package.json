@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/jsonschemavalidator",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "JSON Schema Validator is a JSON validator API that tests any JSON object against a JSON Schema you provide, so you can check JSON against its schema before trusting it. It reports pass-fail status and total error count, while paid plans add specific error messages.",
   "main": "index.js",
   "types": "index.d.ts",
