@@ -4,6 +4,6 @@ require_relative "apiverve_jsonschemavalidator/client"
 
 module APIVerve
   module Jsonschemavalidator
-    VERSION = "1.2.4"
+    VERSION = "1.2.5"
   end
 end
