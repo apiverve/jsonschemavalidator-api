@@ -46,11 +46,11 @@ final _formatPatterns = {
 
 /// JSON Schema Validator API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/jsonschemavalidator?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/jsonschemavalidator?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [schema] (required) - The JSON Schema to validate against
-/// * [json] (required) - The JSON data to validate
+/// * [json] (required) - The JSON data to validate. An empty object is a valid document and is accepted.
 class JsonschemavalidatorClient {
   final String apiKey;
   final String baseUrl;

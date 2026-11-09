@@ -1,4 +1,4 @@
-## 1.1.14
+## 1.2.5
 
 - Initial release
 - Full API support for JSON Schema Validator API
